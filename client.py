@@ -5,7 +5,6 @@ class Vindue (serverclient.ClientWindow):
 	textOnScreen = "";
 	textPostion = [];
 
-
 	def __init__(self, width, height):
 		super().__init__("localhost", "Bertram", width, height)
 	
@@ -16,8 +15,17 @@ class Vindue (serverclient.ClientWindow):
 
 	def on_key_press(self, key, modifier):
 		
+		#if on_key_press == true:
 		self.textOnScreen = chr(key)
 		self.send(self.textOnScreen);
+
+	def on_key_release(self, key, modifier):
+		self.textOnScreen = "o"
+		self.send(self.textOnScreen);
+				
+
+
+
 
 
 
